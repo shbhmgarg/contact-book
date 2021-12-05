@@ -20,7 +20,7 @@ const Login = (props) => {
     if(isAuthenticated) {
       props.history.push('/')
     }
-    if(error === 'Invalid Credentials') {
+    if(error === 'Invalid Credentials' || error === 'User does not exist') {
       setAlert(error, 'danger');
       clearErrors();
     }

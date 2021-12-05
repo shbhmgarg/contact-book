@@ -9,6 +9,7 @@ import {
   CONTACT_ERROR,
   GET_CONTACTS,
   CLEAR_CONTACTS,
+  CLEAR_CONTACT_ERROR
 } from "../types";
 
 // eslint-disable-next-line
@@ -83,6 +84,11 @@ export default (state, action) => {
         contacts: null,
         filtered: null,
         current: null
+      }
+    case CLEAR_CONTACT_ERROR:
+      return {
+        ...state,
+        errror: null
       }
     default:
       return state;

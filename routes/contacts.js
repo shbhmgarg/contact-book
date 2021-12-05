@@ -26,7 +26,11 @@ router.get("/", auth, async (req, res) => {
 // @access Private
 router.post(
   "/",
-  [auth, body("name", "Name is required").not().isEmpty()],
+  [
+    auth,
+    body("name", "Name is required").not().isEmpty(),
+    body("email", "Email is required").not().isEmpty(),
+  ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
